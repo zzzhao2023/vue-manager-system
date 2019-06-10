@@ -18,10 +18,13 @@
 <script>
     //头部
     import vHead from './Header.vue';
-    //
+    //左侧菜单
     import vSidebar from './Sidebar.vue';
+    //tag标签
     import vTags from './Tags.vue';
+    //组件通训
     import bus from './bus';
+
     export default {
         data(){
             return {
