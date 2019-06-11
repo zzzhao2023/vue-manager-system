@@ -41,17 +41,17 @@
                 items: [
                     {
                         icon: 'el-icon-lx-home',
-                        index: 'dashboard',
+                        index: 'dashboard2',
                         title: '系统首页'
                     },
                     {
                         icon: 'el-icon-lx-cascades',
-                        index: 'users',
+                        index: 'Teacher',
                         title: '教师管理'
                     },
                     {
                         icon: 'el-icon-lx-cascades',
-                        index: 'course',
+                        index: 'Course',
                         title: '课程管理'
                     },
                     {

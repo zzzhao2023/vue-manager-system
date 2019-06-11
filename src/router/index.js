@@ -101,7 +101,22 @@ export default new Router({
                 {
                     path: '/Dashboard2',
                     component: resolve => require(['../components/page/hmbb/Dashboard.vue'], resolve),
-                    meta: { title: 'Dashboard2' }
+                    meta: { title: '首页' }
+                },
+                {
+                    path: '/Teacher',
+                    component: resolve => require(['../components/page/hmbb/Teacher.vue'], resolve),
+                    meta: { title: '教师管理' }
+                },
+                {
+                    path: '/Course',
+                    component: resolve => require(['../components/page/hmbb/Course.vue'], resolve),
+                    meta: { title: '课程管理' }
+                },
+                {
+                    path: '/addTeachers',
+                    component: resolve => require(['../components/page/hmbb/TeacherAdd.vue'], resolve),
+                    meta: { title: '教师添加' }
                 }
             ]
         },
