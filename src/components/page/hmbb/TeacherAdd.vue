@@ -42,8 +42,8 @@
             </el-form-item>
 
             <el-form-item>
-                <el-button type="primary" @click="onSubmit">立即创建</el-button>
-                <el-button @click="goBack()">返回</el-button>
+                <el-button type="primary" @click="save()">保存</el-button>
+                <el-button @click="goback()">返回</el-button>
             </el-form-item>
 
         </el-form>
@@ -93,17 +93,15 @@
                     }
                 });
             },
-            goBack(){
+            goback(){
                 this.$router.push({path: '/Teacher'});
-                // window.location.href = document.referrer;
-                // window.history.back(-1);
             },
-            onSubmit() {
+            save() {
                 console.log(this.form);
                 addUser(this.form).then(res => {
                         console.log(res);
                         if (res.rescode == '0') {
-                            this.$router.push({path: '/Teacher'})
+                            this.goback();
                         } else {
                             this.$message.error(res.info.resultMsg);
                         }

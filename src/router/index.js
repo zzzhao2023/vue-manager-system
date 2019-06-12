@@ -114,10 +114,16 @@ export default new Router({
                     meta: { title: '课程管理' }
                 },
                 {
-                    path: '/addTeachers',
+                    path: '/TeacherAdd',
                     component: resolve => require(['../components/page/hmbb/TeacherAdd.vue'], resolve),
                     meta: { title: '教师添加' }
-                }
+                },
+
+                {
+                    path: '/CourseAdd',
+                    component: resolve => require(['../components/page/hmbb/CourseAdd.vue'], resolve),
+                    meta: { title: '课程添加' }
+                },
             ]
         },
         {

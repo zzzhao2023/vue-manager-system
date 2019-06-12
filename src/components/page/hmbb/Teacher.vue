@@ -58,7 +58,7 @@
             return {
                 users: [],
                 pageNum: 1,
-                pageSize: 10,
+                pageSize: 5,
                 search: '',
                 uData: {},
             }
@@ -90,10 +90,10 @@
             },
 
             addTeachers() {
-                this.$router.push({path: '/addTeachers'})
+                this.$router.push({path: '/TeacherAdd'})
             },
             handleEdit(index, obj) {
-                this.$router.push({path: '/addTeachers', query: {id: obj.id}});
+                this.$router.push({path: '/TeacherAdd', query: {id: obj.id}});
             },
             searchByName() {
                 console.log(111);
