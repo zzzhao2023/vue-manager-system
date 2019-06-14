@@ -50,37 +50,39 @@
                         title: '教师管理'
                     },
                     {
-                        icon: 'el-icon-lx-cascades',
+                        icon: 'el-icon-goblet',
                         index: 'Course',
                         title: '课程管理'
                     },
                     {
-                        icon: 'el-icon-lx-cascades',
-                        index: 'answers',
-                        title: '问答题管理'
+                        icon: 'el-icon-medal',
+                        index: 'SingleQuestion',
+                        title: '选择题管理'
                     }
                     ,
+
                     {
                         icon: 'el-icon-lx-cascades',
-                        index: 'judge',
+                        index: 'Judge',
                         title: '判断题管理'
                     }
                     ,
                     {
-                        icon: 'el-icon-lx-cascades',
-                        index: 'empty',
+                        icon: 'el-icon-lx-calendar',
+                        index: 'Empty',
                         title: '填空题管理'
                     }
                     ,
                     {
-                        icon: 'el-icon-lx-cascades',
-                        index: 'single',
-                        title: '选择题管理'
+                        icon: 'el-icon-postcard',
+                        index: 'Answers',
+                        title: '问答题管理'
                     }
                     ,
+
                     {
-                        icon: 'el-icon-lx-cascades',
-                        index: 'exam',
+                        icon: 'el-icon-lx-copy',
+                        index: 'Exam',
                         title: '试卷管理'
                     }
                     ,
@@ -180,6 +182,74 @@
             }
         },
         created() {
+            var role = localStorage.getItem('ms_role');
+            if (role === "manager") {
+                this.items=[
+                    {
+                        icon: 'el-icon-lx-home',
+                        index: 'dashboard2',
+                        title: '系统首页'
+                    },
+                    {
+                        icon: 'el-icon-lx-cascades',
+                        index: 'Teacher',
+                        title: '教师管理'
+                    },
+
+                    {
+                        icon: 'el-icon-lx-copy',
+                        index: 'Exam',
+                        title: '试卷管理'
+                    }
+                    ,
+                ];
+            }
+            if (role === "teacher") {
+                this.items=[
+                    {
+                        icon: 'el-icon-lx-home',
+                        index: 'dashboard2',
+                        title: '系统首页'
+                    },
+                    {
+                        icon: 'el-icon-goblet',
+                        index: 'Course',
+                        title: '课程管理'
+                    },
+                    {
+                        icon: 'el-icon-medal',
+                        index: 'SingleQuestion',
+                        title: '选择题管理'
+                    }
+                    ,
+
+                    {
+                        icon: 'el-icon-lx-cascades',
+                        index: 'Judge',
+                        title: '判断题管理'
+                    }
+                    ,
+                    {
+                        icon: 'el-icon-lx-calendar',
+                        index: 'Empty',
+                        title: '填空题管理'
+                    }
+                    ,
+                    {
+                        icon: 'el-icon-postcard',
+                        index: 'Answers',
+                        title: '问答题管理'
+                    }
+                    ,
+
+                    {
+                        icon: 'el-icon-lx-copy',
+                        index: 'Exam',
+                        title: '试卷管理'
+                    }
+                    ,
+                ];
+            }
             // 通过 Event Bus 进行组件间通信，来折叠侧边栏
             bus.$on('collapse', msg => {
                 this.collapse = msg;

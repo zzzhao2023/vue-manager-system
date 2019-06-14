@@ -3,7 +3,7 @@
         <v-head></v-head>
         <v-sidebar></v-sidebar>
         <div class="content-box" :class="{'content-collapse':collapse}">
-            <v-tags></v-tags>
+            <!--<v-tags></v-tags>-->
             <div class="content">
                 <transition name="move" mode="out-in">
                     <keep-alive :include="tagsList">
@@ -21,7 +21,7 @@
     //左侧菜单
     import vSidebar from './Sidebar.vue';
     //tag标签
-    import vTags from './Tags.vue';
+    // import vTags from './Tags.vue';
     //组件通训
     import bus from './bus';
 
@@ -33,7 +33,7 @@
             }
         },
         components:{
-            vHead, vSidebar, vTags
+            vHead, vSidebar,
         },
         created(){
             bus.$on('collapse', msg => {

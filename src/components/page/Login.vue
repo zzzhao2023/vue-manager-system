@@ -4,10 +4,13 @@
             <div class="ms-title">后台管理系统</div>
             <el-form :model="userFrom" ref="userFrom" label-width="0px" class="ms-content">
 
-                <el-form-item prop="username">
-                    <el-input v-model="userFrom.role" placeholder="manager">
-                        <el-button slot="prepend" icon="el-icon-lx-people"> 角色</el-button>
-                    </el-input>
+                <el-form-item prop="role" label="">
+                    <!--<el-row>-->
+                        <el-button icon="el-icon-lx-people"> 角色</el-button>
+                        <el-select v-model="userFrom.role" icon="el-icon-lx-people">
+                            <el-option v-for="item in roles" :value="item.name" :label="item.desc"></el-option>
+                        </el-select>
+                    <!--</el-row>-->
                 </el-form-item>
 
 
@@ -63,6 +66,7 @@
                 login(this.userFrom).then(res => {
                     if (res.rescode == '0') {
                         localStorage.setItem('ms_username', this.userFrom.phone);
+                        localStorage.setItem('ms_role', this.userFrom.role);
                         this.$router.push('/');
                     } else {
                         this.$message.error(res.info.resultMsg);

@@ -22,6 +22,32 @@ export function addCourseOrChapter(data) {
     const url = "/examination/addCourseOrChapter";
     return axios.post(url, data);
 }
+
+// 课程 | 章节
+export function getCourseOrChapter(data) {
+    const url = "/examination/getCourseOrChapter";
+    return axios.post(url, data);
+}
+
+export function getCourse() {
+    var data={
+        type:'course',
+        pageSize:10000,
+        pageNum:1,
+    };
+    const url = "/examination/getCourseOrChapter";
+    return axios.post(url, data);
+}
+export function getChapter() {
+    var data={
+        type:'chapter',
+        pageSize:10000,
+        pageNum:1,
+    };
+    const url = "/examination/getCourseOrChapter";
+    return axios.post(url, data);
+}
+
 //添加问答
 export function addAnswer(data) {
     const url="/examination/addAnswer";
@@ -47,8 +73,8 @@ export function addSingleQ(data) {
 
 
 //获取题目详情
-export function postQuestion(data) {
-    const url="/examination/postQuestion";
+export function getQuestion(data) {
+    const url="/examination/getQuestion";
     return axios.post(url,data);
 }
 
@@ -57,8 +83,8 @@ export function postQuestion(data) {
 
 
 //获取题目列表
-export function postQuestionList(data) {
-    const url="/examination/postQuestionList";
+export function getQuestionList(data) {
+    const url="/examination/getQuestionList";
     return axios.post(url,data);
 }
 //生成试卷
@@ -69,16 +95,19 @@ export function addExamination(data) {
 
 
 //试卷列表
-export function postExamination(data) {
-    const url = "/examination/postExamination";
+export function getExamination(data) {
+    const url = "/examination/getExamination";
     return axios.post(url, data);
 }
 
 //试卷详情
-export function postExaminationDetail(data) {
-    const url="/examination/postExaminationDetail";
+export function getExaminationDetail(data) {
+    const url="/examination/getExaminationDetail";
     return axios.post(url,data);
 }
+
+//通过下载地址下载
+export const downloadUrl = "http://59.110.212.84:9999/examination/downloadExamination?id=";
 
 //下载
 export function downloadExamination(data) {

@@ -124,6 +124,61 @@ export default new Router({
                     component: resolve => require(['../components/page/hmbb/CourseAdd.vue'], resolve),
                     meta: { title: '课程添加' }
                 },
+                {
+                    path: '/SingleQuestion',
+                    component: resolve => require(['../components/page/hmbb/SingleQuestion.vue'], resolve),
+                    meta: { title: '选择题管理' }
+                },
+
+                {
+                    path: '/SingleAdd',
+                    component: resolve => require(['../components/page/hmbb/SingleAdd.vue'], resolve),
+                    meta: { title: '选择题管理' }
+                },
+
+                {
+                    path: '/Empty',
+                    component: resolve => require(['../components/page/hmbb/Empty.vue'], resolve),
+                    meta: { title: '填空题' }
+                },
+                {
+                    path: '/EmptyAdd',
+                    component: resolve => require(['../components/page/hmbb/EmptyAdd.vue'], resolve),
+                    meta: { title: '填空题' }
+                },
+
+                {
+                    path: '/Exam',
+                    component: resolve => require(['../components/page/hmbb/Exam.vue'], resolve),
+                    meta: { title: '试卷管理' }
+                },
+
+                {
+                    path: '/ExamAdd',
+                    component: resolve => require(['../components/page/hmbb/ExamAdd.vue'], resolve),
+                    meta: { title: '添加试卷' }
+                },
+                {
+                    path: '/Judge',
+                    component: resolve => require(['../components/page/hmbb/Judge.vue'], resolve),
+                    meta: { title: '判断题管理' }
+                },
+                {
+                    path: '/JudgeAdd',
+                    component: resolve => require(['../components/page/hmbb/JudgeAdd.vue'], resolve),
+                    meta: { title: '判断题' }
+                },
+
+                {
+                    path: '/Answers',
+                    component: resolve => require(['../components/page/hmbb/Answers.vue'], resolve),
+                    meta: { title: '判断题管理' }
+                },
+                {
+                    path: '/AnswersAdd',
+                    component: resolve => require(['../components/page/hmbb/AnswersAdd.vue'], resolve),
+                    meta: { title: '判断题' }
+                },
             ]
         },
         {

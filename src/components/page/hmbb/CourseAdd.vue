@@ -1,6 +1,8 @@
 <template>
     <div class="container">
         <el-form ref="form" :model="form" label-width="80px">
+            <el-input v-model="form.type" type="hidden"></el-input>
+            <el-input v-model="form.id" type="hidden"></el-input>
             <el-form-item label="名称">
                 <el-input v-model="form.name"></el-input>
             </el-form-item>
@@ -34,39 +36,43 @@
                     name: '',
                     createAt: '',
                     updateAt: '',
-            
-                    id:this.$route.query.id,
+                    type: this.$route.query.type,
+                    id: this.$route.query.id,
                 }
             }
         },
         created() {
-            if(this.form.id){
+            if (this.form.id) {
                 this.getItemDetail();
             }
         },
 
         methods: {
-            getItemDetail(){
-                var obj={
-                    id:this.form.id,
+            getItemDetail() {
+                var obj = {
+                    id: this.form.id,
+                    type: this.$route.query.type,
                 };
-                getCourseOrChapter(obj).then(res =>{
+                getCourseOrChapter(obj).then(res => {
                     console.log(res);
                     if (res.rescode == '0') {
                         this.form = res.data.infos.list[0];
+                        if (this.$route.query.type) {
+                            this.form.type = this.$route.query.type;
+                        }
                     } else {
                         this.$message.error(res.info.resultMsg);
                     }
                 });
             },
-            goBack(){
+            goback() {
                 this.$router.push({path: '/Course'});
             },
             save() {
-
+                // console.log(this.form);
                 addCourseOrChapter(this.form).then(res => {
                     if (res.rescode == '0') {
-                        goBack();
+                        this.goback();
                     } else {
                         this.$message.error(res.info.resultMsg);
                     }

@@ -12,7 +12,16 @@
                     @searchevent="searchevent"
         />
         <p>章节管理</p>
-
+        <home-table v-bind:tableData="chapter"
+                    v-bind:total="uData2.total"
+                    v-bind:page-num="pageNum2"
+                    v-bind:page-size="pageSize2"
+                    v-bind:search="search2"
+                    @addevent="addevent2"
+                    @handleeditevent="handleeditevent2"
+                    @handlecurrentchange="handleCurrentChange2"
+                    @searchevent="searchevent2"
+        />
     </div>
 
 </template>
@@ -42,11 +51,13 @@
             }
         },
         created() {
-
+            //获取课程
             this.getCourseData();
+            //获取章节
             this.getChapterData();
         },
         methods: {
+            //课程
             getCourseData() {
                 var obj = {
                     pageSize: this.pageSize1,
@@ -63,6 +74,7 @@
                     }
                 });
             },
+            //章节
             getChapterData() {
                 var obj = {
                     pageSize: this.pageSize2,
@@ -79,21 +91,38 @@
                     }
                 });
             },
+
+
+            ///////////////////有关课程
+            addevent() {
+                this.$router.push({path: '/CourseAdd',query:{type:'course'}})
+            },
+            handleeditevent(index, obj) {
+                this.$router.push({path: '/CourseAdd', query: {id: obj.id,type:'course'}});
+            },
+            searchevent() {
+                this.getCourseData();
+            },
             //翻页
             handleCurrentChange1(val) {
                 this.pageNum1 = val;
                 this.getCourseData();
             },
+            ////////////有关章节
 
-            addevent() {
-                this.$router.push({path: '/addTeachers'})
+            addevent2() {
+                this.$router.push({path: '/CourseAdd',query:{type:'chapter'}})
             },
-            handleeditevent(index, obj) {
-                this.$router.push({path: '/addTeachers', query: {id: obj.id}});
+            handleeditevent2(index, obj) {
+                this.$router.push({path: '/CourseAdd', query: {id: obj.id,type:'chapter'}});
             },
-            searchevent() {
+            searchevent2() {
                 this.getChapterData();
-            }
+            },
+            handleCurrentChange2(val) {
+                this.pageNum2 = val;
+                this.getChapterData();
+            },
         }
     }
 </script>
