@@ -7,7 +7,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            redirect: '/dashboard2'
+            redirect: '/dashboard'
         },
         {
             path: '/',
@@ -97,8 +97,10 @@ export default new Router({
                     component: resolve => require(['../components/page/403.vue'], resolve),
                     meta: { title: '403' }
                 },
+
+
                 //题库管理的路由
-                {
+                /*{
                     path: '/Dashboard2',
                     component: resolve => require(['../components/page/hmbb/Dashboard.vue'], resolve),
                     meta: { title: '首页' }
@@ -178,7 +180,9 @@ export default new Router({
                     path: '/AnswersAdd',
                     component: resolve => require(['../components/page/hmbb/AnswersAdd.vue'], resolve),
                     meta: { title: '判断题' }
-                },
+                },*/
+
+
             ]
         },
         {

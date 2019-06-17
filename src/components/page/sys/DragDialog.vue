@@ -18,6 +18,12 @@
                 <el-button type="primary" @click="visible = false">确 定</el-button>
             </span>
         </el-dialog>
+        <div class="container">
+            <el-row>
+                msg:<el-input v-model="msg"></el-input>
+            </el-row>
+            reversedMsg:<p>{{reversedMsg}}</p>
+        </div>
     </section>
 </template>
 
@@ -25,9 +31,25 @@
 export default {
     data(){
         return {
-            visible: false
+            visible: false,
+            msg:'',
+
         }
+    },
+    //计算属性
+    computed:{
+        reversedMsg:function () {
+            return this.msg.split('').reverse().join('');
+        }
+    },
+    created(){
+
+    },
+
+    methods:{
+
     }
+
 }
 </script>
 
