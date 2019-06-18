@@ -5,6 +5,7 @@ Vue.use(Router);
 
 export default new Router({
     routes: [
+
         {
             path: '/',
             redirect: '/dashboard'
@@ -96,6 +97,11 @@ export default new Router({
                     path: '/403',
                     component: resolve => require(['../components/page/403.vue'], resolve),
                     meta: { title: '403' }
+                },
+                {
+                    path: '/test',
+                    component: resolve => require(['../components/page/ParentComponent.vue'], resolve),
+                    meta: { title: 'test' }
                 },
 
 
