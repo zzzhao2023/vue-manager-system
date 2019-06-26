@@ -5,7 +5,7 @@
         </el-row>
 
         <el-row>
-            <el-button @click="save"> 保存</el-button>
+            <el-button @click="doButton(message)"> 保存</el-button>
         </el-row>
 
     </div>
@@ -14,15 +14,15 @@
 <script>
     export default {
         name: "Post",
-        props: ['post',],
+        props: ['post', 'message'],
         data() {
             return {
                 count: 0,
             }
         },
         methods: {
-            save() {
-                return this.$emit('save')
+            doButton(param) {
+                return this.$emit('save', param)
             }
 
         }
