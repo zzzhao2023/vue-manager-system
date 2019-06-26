@@ -7,7 +7,7 @@
             </el-row>
             reversedMsg:<p>{{reversedMsg}}</p>
         </div>
-        <post @save="say" :message="1 "></post>
+        <post @save="say" :message="msg"></post>
     </div>
 
 
@@ -21,7 +21,7 @@
         components: {'post': Post},
         data() {
             return {
-                msg: "",
+                msg: "good",
             }
         },
 
@@ -50,7 +50,7 @@
         },
         methods: {
             say(msg) {
-                this.$message.success("save ....", msg);
+                this.$message.success("save ...." + msg);
             }
         }
     }

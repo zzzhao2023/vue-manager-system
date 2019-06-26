@@ -5,7 +5,7 @@
         </el-row>
 
         <el-row>
-            <el-button @click="doButton(message)"> 保存</el-button>
+            <el-button @click="doButton(message)"> 保存 </el-button>
         </el-row>
 
     </div>
